@@ -32,45 +32,54 @@ class GraphController extends Controller
         $plateTemp = PlateTemperature::all();
 
         $energiesValue = [];
-        $time = [];
+        $energyTime = [];
         foreach ($energies as $energie) {
             $energiesValue[] = $energie->value;
-            $time[] = $energie->time;
+            $energyTime[] = $energie->time;
         }
 
         $currentsValue = [];
+        $currentTime = [];
         foreach ($currents as $current) {
             $currentsValue[] = $current->value;
+            $currentTime[] = $current->time;
         }
 
         $powersValue = [];
+        $powerTime = [];
         foreach ($powers as $power) {
             $powersValue[] = $power->value;
+            $powerTime[] = $power->time;
         }
 
         $voltagesValue = [];
+        $voltageTime = [];
         foreach ($voltages as $voltage) {
             $voltagesValue[] = $voltage->value;
+            $voltageTime[] = $voltage->time;
         }
 
         $roomTempValue = [];
+        $roomTempTime = [];
         foreach ($roomTemp as $temp) {
             $roomTempValue[] = $temp->value;
+            $roomTempTime[] = $temp->time;
         }
 
         $plateTempValue = [];
+        $plateTempTime = [];
         foreach ($plateTemp as $temp) {
             $plateTempValue[] = $temp->value;
+            $plateTempTime[] = $temp->time;
         }
 
         return response()->json([
-            'energia'  => $energiesValue,
-            'corrente' => $currentsValue,
-            'potencia' => $powersValue,
-            'tensao'   => $voltagesValue,
-            'temperatura_ambiente' => $roomTempValue,
-            'temperatura_placa'    => $plateTempValue,
-            'tempo' => $time
+            'energia'  => [$energiesValue, $energyTime],
+            'corrente' => [$currentsValue, $currentTime],
+            'potencia' => [$powersValue, $powerTime],
+            'tensao'   => [$voltagesValue,$voltageTime],
+            'temperatura_ambiente' => [$roomTempValue, $roomTempTime],
+            'temperatura_placa'    => [$plateTempValue, $plateTempTime],
         ]);
     }
     /**

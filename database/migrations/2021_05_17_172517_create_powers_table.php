@@ -18,6 +18,7 @@ class CreatePowersTable extends Migration
             $table->float('value');
             $table->string('time');
             $table->string('date');
+            $table->timestamps();
         });
     }
 

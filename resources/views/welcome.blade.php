@@ -262,22 +262,24 @@
 
                     console.log('reload');
 
-                    graph1.data.labels = response.tempo;
-                    graph1.data.datasets[0].data = response.potencia;
-                    graph1.data.datasets[1].data = response.energia;
+                    graph1.data.labels = response.potencia[1];
+                    graph1.data.datasets[0].data = response.potencia[0];
+                    graph1.data.datasets[1].data = response.energia[0];
                     graph1.update();
 
-                    graph2.data.labels = response.tempo;
-                    graph2.data.datasets[0].data = response.corrente;
+                    graph2.data.labels = response.corrente[1];
+                    graph2.data.datasets[0].data = response.corrente[0];
                     graph2.update();
 
-                    graph3.data.labels = response.tempo;
-                    graph3.data.datasets[0].data = response.temperatura_ambiente;
-                    graph3.data.datasets[1].data = response.temperatura_placa;
+                    console.log(response);
+
+                    graph3.data.labels = response.temperatura_placa[1];
+                    graph3.data.datasets[0].data = response.temperatura_ambiente[0];
+                    graph3.data.datasets[1].data = response.temperatura_placa[0];
                     graph3.update();
 
-                    graph4.data.labels = response.tempo;
-                    graph4.data.datasets[0].data = response.tensao;
+                    graph4.data.labels = response.tensao[1];
+                    graph4.data.datasets[0].data = response.tensao[0];
                     graph4.update();
 
                     document.getElementById('measure-voltage').innerHTML =
