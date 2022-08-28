@@ -283,17 +283,17 @@
                     graph4.update();
 
                     document.getElementById('measure-voltage').innerHTML =
-                        "TENSÃO: " + response.tensao[response.tensao.length - 1] + " V";
+                        "TENSÃO: " + response.tensao[0][response.tensao.length - 1] + " V";
                     document.getElementById('measure-current').innerHTML =
-                        "CORRENTE: " + response.corrente[response.corrente.length - 1] + " A";
+                        "CORRENTE: " + response.corrente[0][response.corrente.length - 1] + " A";
                     document.getElementById('measure-power').innerHTML =
-                        "POTÊNCIA: " + response.potencia[response.potencia.length - 1] + " W";
+                        "POTÊNCIA: " + response.potencia[0][response.potencia.length - 1] + " W";
                     document.getElementById('measure-energy').innerHTML =
-                        "ENERGIA: " + response.energia[response.energia.length - 1] + " W/h";
+                        "ENERGIA: " + response.energia[0][response.energia.length - 1] + " W/h";
                     document.getElementById('measure-tempR').innerHTML =
-                        "TEMPERATURA AMBIENTE: " + response.temperatura_ambiente[response.temperatura_ambiente.length - 1] + "°C";
+                        "TEMPERATURA AMBIENTE: " + response.temperatura_ambiente[0][response.temperatura_ambiente.length - 1] + "°C";
                     document.getElementById('measure-tempP').innerHTML =
-                        "TEMPERATURA DA PLACA: " + response.temperatura_placa[response.temperatura_placa.length - 1] + "°C";
+                        "TEMPERATURA DA PLACA: " + response.temperatura_placa[0][response.temperatura_placa.length - 1] + "°C";
                 }
             });
         }
